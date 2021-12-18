@@ -13,7 +13,7 @@ public class Give implements CommandExecutor{
 
 	public void oncomm(Player p) {
 
-
+			
 			ItemStack stick = new ItemStack(Material.STICK);
 			ItemMeta stickmeta = stick.getItemMeta();
 			stickmeta.addEnchant(Enchantment.LOOT_BONUS_BLOCKS, 10, true);
@@ -29,6 +29,7 @@ public class Give implements CommandExecutor{
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         if(cmd.getName().equalsIgnoreCase("blocksell")) {
        	 Player p = (Player) sender;
+       	 System.out.println("give stick");
         	oncomm(p);
 
 
