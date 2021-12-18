@@ -1,0 +1,9 @@
+name: CheatsCkeck
+main: com.nightday.ndplug.main.Main
+version: 1.0
+author: NightDay
+api-version: 1.13
+commands:
+   cheatscheck:
+      description: Your description
+      usage: /cheatscheck
