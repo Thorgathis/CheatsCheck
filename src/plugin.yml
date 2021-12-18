@@ -1,5 +1,5 @@
 name: CheatsCkeck
-main: com.nightday.cheatscheck.Main
+main: com.nightday.ndplug.main.Main
 version: 1.0
 author: NightDay
 api-version: 1.13

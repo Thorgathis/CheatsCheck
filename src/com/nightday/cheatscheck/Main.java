@@ -14,17 +14,17 @@ public class Main extends JavaPlugin {
 
 	@Override
 	public void onEnable() {
-		instance = this;
-		this.saveDefaultConfig();
-		this.getConfig();
-		this.saveConfig();
-		FileConfiguration config = this.getConfig();
+		
+		getInstance().saveDefaultConfig();
+		getInstance().getConfig();
+		getInstance().saveConfig();
+		FileConfiguration config = getInstance().getConfig();
 		config.addDefault("Message", "сообщение");
 		config.addDefault("Title", "текст");
 		config.addDefault("SubTitle", "подтекст");
 		config.addDefault("Time", 120);
 
-		Bukkit.getPluginManager().registerEvents(new Handler(), this);
+		Bukkit.getPluginManager().registerEvents(new Handler(), getInstance());
 		Bukkit.getPluginCommand("cheatscheck").setExecutor(new Give());
 	}
 	

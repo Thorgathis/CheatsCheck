@@ -1,9 +1,9 @@
 # CheatsCheck Config
 #mesasge in chat
-Message: test
+Message:
 #title in screen
-Title: test
+Title:
 #subtitle on screen
-SubTitle: test
+SubTitle:
 #time to wiev in ticks
-Time: 120
+Time:
