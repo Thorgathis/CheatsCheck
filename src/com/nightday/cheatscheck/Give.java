@@ -9,32 +9,31 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-public class Give implements CommandExecutor{
+import net.md_5.bungee.api.ChatColor;
+
+public class Give implements CommandExecutor {
+	ItemStack stick = new ItemStack(Material.STICK);
+	ItemMeta stickmeta = stick.getItemMeta();
 
 	public void oncomm(Player p) {
+		stickmeta.setDisplayName(ChatColor.GREEN + "Cheatscheck stick");
+		stickmeta.addEnchant(Enchantment.LOOT_BONUS_BLOCKS, 10, true);
+		stick.setItemMeta(stickmeta);
+		stick.addUnsafeEnchantment(Enchantment.LOOT_BONUS_BLOCKS, 10);
+		stick.setType(Material.STICK);
 
-			
-			ItemStack stick = new ItemStack(Material.STICK);
-			ItemMeta stickmeta = stick.getItemMeta();
-			stickmeta.addEnchant(Enchantment.LOOT_BONUS_BLOCKS, 10, true);
-			stick.setItemMeta(stickmeta);
-			stick.addUnsafeEnchantment(Enchantment.LOOT_BONUS_BLOCKS, 10);
-			stick.setType(Material.STICK);
-						p.getInventory().addItem(stick);
-						p.updateInventory();
-
-				
 	}
-	
+
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-        if(cmd.getName().equalsIgnoreCase("blocksell")) {
-       	 Player p = (Player) sender;
-       	 System.out.println("give stick");
-        	oncomm(p);
+		if (cmd.getName().equalsIgnoreCase("cheatscheck")) {
+			Player p = (Player) sender;
+			System.out.println("give stick");
+			oncomm(p);
+			p.getInventory().addItem(stick);
+			p.updateInventory();
 
+		}
+		return true;
+	}
 
-        }
-        return true;
-}
-	
 }

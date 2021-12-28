@@ -16,6 +16,7 @@ import org.bukkit.inventory.ItemStack;
 
 public class Handler implements Listener {
 	FileConfiguration config = getInstance().getConfig();
+
 	@EventHandler
 	public void onClick(PlayerInteractEntityEvent e) {
 		if (e.getRightClicked().getType() != EntityType.PLAYER)
@@ -26,10 +27,10 @@ public class Handler implements Listener {
 
 		if (item != null && item.getType() == Material.STICK
 				&& item.getEnchantmentLevel(Enchantment.LOOT_BONUS_BLOCKS) >= 10) {
-			c.sendMessage(ChatColor.RED + config.getString("Message") + ChatColor.AQUA + p.getName());
-			c.sendTitle(ChatColor.RED + config.getString("Title"),
-					ChatColor.DARK_RED + config.getString("SubTitle"), 20,config.getInt("Time"), 20);
+			c.sendMessage(ChatColor.RED + config.getString("Message") + ChatColor.AQUA + " " + p.getName());
+			c.sendTitle(ChatColor.RED + config.getString("Title"), ChatColor.DARK_RED + config.getString("SubTitle"),
+					20, config.getInt("Time"), 20);
 		}
 	}
-	
+
 }

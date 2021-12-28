@@ -1,9 +1,10 @@
 # CheatsCheck Config
 #mesasge in chat
-Message: test
+Message: Вы вызваны на проверку на читы игроком
 #title in screen
-Title: test
+Title: Проверка на читы
 #subtitle on screen
-SubTitle: test
+SubTitle: Пишите свой дс либо бан
 #time to wiev in ticks
 Time: 120
+

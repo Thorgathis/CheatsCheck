@@ -19,15 +19,13 @@ public class Main extends JavaPlugin {
 		this.getConfig();
 		this.saveConfig();
 		FileConfiguration config = this.getConfig();
-		config.addDefault("Message", "сообщение");
-		config.addDefault("Title", "текст");
-		config.addDefault("SubTitle", "подтекст");
+		config.addDefault("Message", "Вы вызваны на проверку на читы игроком");
+		config.addDefault("Title", "Проверка на читы");
+		config.addDefault("SubTitle", "Пишите свой дс либо бан");
 		config.addDefault("Time", 120);
 
 		Bukkit.getPluginManager().registerEvents(new Handler(), this);
 		Bukkit.getPluginCommand("cheatscheck").setExecutor(new Give());
 	}
-	
 
-	
 }
