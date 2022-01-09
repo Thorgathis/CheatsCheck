@@ -17,23 +17,25 @@ public class Give implements CommandExecutor {
 
 	public void oncomm(Player p) {
 		stickmeta.setDisplayName(ChatColor.GREEN + "Cheatscheck stick");
-		stickmeta.addEnchant(Enchantment.LOOT_BONUS_BLOCKS, 10, true);
+		stickmeta.addEnchant(Enchantment.OXYGEN, 10, true);
 		stick.setItemMeta(stickmeta);
-		stick.addUnsafeEnchantment(Enchantment.LOOT_BONUS_BLOCKS, 10);
+		stick.addUnsafeEnchantment(Enchantment.OXYGEN, 10);
 		stick.setType(Material.STICK);
 
 	}
 
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-		if (cmd.getName().equalsIgnoreCase("cheatscheck")) {
-			Player p = (Player) sender;
-			System.out.println("give stick");
+		Player p = (Player) sender;
+		if (cmd.getName().equalsIgnoreCase("cheatscheck") && sender.hasPermission("cheatscheck.give")) {
+			sender.sendMessage(ChatColor.GREEN + "Give stick!");
 			oncomm(p);
 			p.getInventory().addItem(stick);
 			p.updateInventory();
-
+		} else {
+			sender.sendMessage(ChatColor.RED + "You do not have permission!");
+			return true;
 		}
-		return true;
-	}
+		return false;
 
+	}
 }
